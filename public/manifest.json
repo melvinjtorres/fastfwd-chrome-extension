@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "FastFwd",
+  "version": "1.0.0",
+  "description": "Automatically fast forward through ads on YouTube",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.twitch.tv/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.twitch.tv/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
